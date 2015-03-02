@@ -16,10 +16,9 @@ int main()
 	char a[10] = "abc", b[10] = "efg";
 
 	strconcat(a, b);
-	//printf("%s\n", a);
+	printf("%s\n", a);
 	
-	strend(a,b);
-	//printf("%s\n", a);
+	printf("%d\n", strend(a,b));
 
 
 }
@@ -41,13 +40,13 @@ int strend(char *s, char *t)
 	while(*s++ != *t)
 		;
 	s--;
-	printf("%c\n", *s);
-	
+
 	for(; *s == *t; s++, t++){
-		if(*s == '\0')
+		if(*s != '\0')
+			continue;
+		else if(*s == '\0')
 			return 1;
-		else
-			return 0;
+		
 	}
 
 }
